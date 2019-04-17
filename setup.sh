@@ -20,12 +20,12 @@ sed_arg="s/hostname=.*/hostname=voyager-apollo-x86_64-1/; \
     s/root_password=.*/root_password=${root_password}/; \
     s/user_password=.*/user_password=( ${user_password} )/; \
     s/lan_dev=.*/lan_dev=eno2/; \
-    s%hdd=.*%hdd=${hdd}%; 
+    s%hdd=.*%hdd=${hdd}%;"
 sed -i "$sed_arg" install-conf.sh
 
-#sed_arg="s/dev=.*/dev=( can0 can1 can2 can3 )/; \
-#         s/bitrate=.*/bitrate=( 500000 500000 500000 500000 )/"
-#sed -i "$sed_arg" setup-post-09-socketcan.sh
+sed_arg="s/dev=.*/dev=( can0 can1 can2 can3 )/; \
+         s/bitrate=.*/bitrate=( 500000 500000 500000 500000 )/"
+sed -i "$sed_arg" setup-post-09-socketcan.sh
 
 # for the Nvidia
 #sed_arg='/pacman -S --noconfirm nvidia/d'
