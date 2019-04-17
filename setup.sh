@@ -6,7 +6,7 @@ read root_password
 echo Revere user password?
 read user_password
 
-hdd=/dev/nvme0n1p1
+hdd=/dev/nvme0n1
 
 wget https://raw.github.com/chalmers-revere/opendlv.os/master/x86/get.sh
 sh get.sh
